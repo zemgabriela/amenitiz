@@ -1,0 +1,17 @@
+{
+    "GR1": {
+        "discount_type": "free_product_included",
+        "promo_amount": 1,
+        "promo_free": 1
+    },
+    "SR1": {
+        "discount_type": "fixed_price_after_x",
+        "promo_amount": 3,
+        "new_price": 4.5
+    },
+    "CF1": {
+        "discount_type": "fraction_price_after_x",
+        "promo_amount": 3,
+        "fraction": 0.6667
+    }
+}

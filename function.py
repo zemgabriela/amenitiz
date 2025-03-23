@@ -1,5 +1,6 @@
 from collections import Counter
 
+################## CASES ##################
 # case 1: Buy X, get Y free
 def free_product_included(discount_dict, count_occurances, price_dict):
     """
@@ -69,3 +70,19 @@ def full_price_for_non_discounted(discount_dict, count_occurances, price_dict):
             total_price += round(count_occurances[product] * price_dict[product],2)
 
     return total_price
+
+################## CART FUNCTION ##################
+# calculating_price function
+def calculating_price(cart, discount_dict, price_dict):
+    count_occurances = {product: cart.count(product) for product in set(cart)}
+
+    # Apply all functions
+    free_product_price = free_product_included(discount_dict, count_occurances, price_dict)
+    fixed_price_price = fixed_price_after_x(discount_dict, count_occurances, price_dict)
+    fraction_price = fraction_price_after_x(discount_dict, count_occurances, price_dict)
+    full_price = full_price_for_non_discounted(discount_dict, count_occurances, price_dict)
+
+    # Final total price
+    return free_product_price + fixed_price_price + fraction_price + full_price
+
+    
